@@ -1,6 +1,7 @@
 package com.jms.assignment;
 
 // This line imports the necessary dependencies
+import com.jms.assignment.Component.EmailMessages;
 import com.jms.assignment.Data.Email;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class EmailController {
         // This line logs the received email request with the info level
         log.info("Received Email Request from Controller {}", email);
         // This line calls the sendEmail method of the EmailMessagePublisher instance to send the email
-        boolean isMessageSent = emailMessagePublisher.sendEmail(email);
+        boolean isMessageSent = emailMessagePublisher.sendMyEmail(email);
         // This line returns a response message depending on whether the email was sent successfully or not
         return isMessageSent ? "Hurray! It's Success!" : "Oops! It's Failed!";
     }
@@ -39,7 +40,7 @@ public class EmailController {
     // This line maps incoming GET requests to the / path and returns a list of Email objects as a JSON response body
     @GetMapping("/")
     @ResponseBody
-    public List<Email> getAllMessage() {
+    public List<Email> getMessages() {
         // This line calls the getAllJmsMessages method of the EmailMessages instance to get all the stored emails
         return emailMessages.getAllJmsMessages();
     }

@@ -1,4 +1,4 @@
-package com.jms.assignment;
+package com.jms.assignment.Component;
 
 import com.jms.assignment.Data.Email;
 import org.springframework.stereotype.Component;

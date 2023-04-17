@@ -24,7 +24,7 @@ public class EmailMessagePublisher {
     }
 
     // This line declares a method that sends an email message to the "jms.email.queue" destination
-    public boolean sendEmail(Email email) {
+    public boolean sendMyEmail(Email email) {
         try {
             // This line converts and sends the email to the JMS queue using the JmsTemplate instance
             jmsTemplate.convertAndSend("jms.email.queue", email);

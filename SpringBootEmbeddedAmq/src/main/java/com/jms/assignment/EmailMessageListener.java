@@ -1,6 +1,7 @@
 package com.jms.assignment;
 
 // This line imports the necessary dependencies
+import com.jms.assignment.Component.EmailMessages;
 import com.jms.assignment.Data.Email;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
